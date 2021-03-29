@@ -8,13 +8,10 @@ module.exports = function repeater(str, options) {
    if (!options.additionSeparator) {
     options.additionSeparator = '|';
    };
-   if (!options.additionRepeatTimes) {
-    return ' '
-   }; 
    if (!options.repeatTimes) {
-    return ' '
+    options.repeatTimes = 1;
    };
-   for (let j = options.additionRepeatTimes; j > 0; j--) {
+   for (let j = options.repeatTimes; j > 0; j--) {
    result = result + str;
    if (options.addition) {
     for (let i = options.additionRepeatTimes; i > 0; i--) {
@@ -25,11 +22,11 @@ module.exports = function repeater(str, options) {
         }
     }
    }
-  
    if (j > 1) {
     result = result + options.separator 
    } 
  }
    return result
+
 };
   
